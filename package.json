@@ -8,14 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/mosikoo/nowa-i18n.git"
   },
   "keywords": [
     "nowa",
     "webpack",
     "i18n"
   ],
-  "author": "mosikoo",
+  "author": "mosikoo <chenqiuws@gmail.com>",
   "license": "MIT",
-  "homepage": ""
+  "homepage": "",
+  "dependencies": {
+    "object-assign": "^4.1.1",
+    "xlsx": "^0.9.7",
+    "chalk": "^1.1.3"
+  }
 }
