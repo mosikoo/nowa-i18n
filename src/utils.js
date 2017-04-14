@@ -4,12 +4,30 @@ const path = require('path');
 const assign = require('object-assign');
 const utils = {};
 
+utils.isExcel = (filepath) => {
+  const isExist = fs.existsSync(filepath);
+  if (isExist) {
+    const ext = path.extname(filepath).slice(1);
+    return ext === 'xlsx' || ext === 'xls';
+  }
+  return false;
+}
+
+utils.processData = (json) => {
+  // need to optimize
+  var str = JSON.stringify(json).replace(/,/g, ',\n  ')
+    .replace(/:/g, ': ').replace(/[{}]/g, '');
+  str = 'module.exports = {\n  ' + str + '\n};\n';
+  return str;
+}
+
 utils.isExist = (filepath) => {
   if (!fs.existsSync(filepath)) {
     console.log(chalk.red('请输入一个正确的文件路径~'));
     exit(1);
   }
 }
+
 // 异步遍历recursion
 var fileNum = 0, fileNum2 = 0;
 function workDir(filepath, processCallback, callback ) {
