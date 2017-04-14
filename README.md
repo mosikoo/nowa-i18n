@@ -44,3 +44,6 @@ nowa i18n json i18n.xlsx
 - 在项目的根目录下执行`nowa i18n excel ./`生成`i18n.excel`文档
 - 将`i18n.excel`将给翻译小组翻译写入相应的英文(excel文档下可能有多个sheets，提醒翻译小组别漏译)
 - 对翻译过的`i18n.excel`执行命令, `nowa i18n json i18n.excel`
+
+##### CHANGE_LOG
+- 1.0.1 兼容window

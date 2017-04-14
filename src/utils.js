@@ -39,7 +39,7 @@ function workDir(filepath, processCallback, callback ) {
     if (length <= 0) {
       return callback(null);
     }
-    if (/\/i18n$/.test(filepath)) {
+    if (/[\/\\]i18n$/.test(filepath)) {
       processCallback(files, filepath);
     }
     files.forEach(file => {
@@ -48,10 +48,7 @@ function workDir(filepath, processCallback, callback ) {
         if (err) {
           console.log(err);
         }
-        if (stats.isDirectory() && file !== 'node_modules') {
-          if (file === 'i18n') {
-            // callback(innerFilepath);
-          }
+        if (stats.isDirectory() && (file !== 'node_modules' && file !== '.git')) {
           workDir(innerFilepath, processCallback, (error) => {
             if (error) {
               return callback(error);

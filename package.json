@@ -1,6 +1,6 @@
 {
   "name": "nowa-i18n",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "根据zh-cn.js自动生成翻译excel文档及生成en.js",
   "main": "index.js",
   "scripts": {

@@ -26,9 +26,14 @@ const excel = (filepath) => {
       console.log(chalk.red('     at ' + i18nPath));
     }
   }, () => {
-    parser.writeFile(workbook, 'i18n.xlsx');
-    console.log(path.resolve(process.cwd(), 'i18n.xlsx') + ': ');
-    console.log('     i18n.xlsx翻译文档在当前路径下已成功生成!');
+    if (workbook.SheetNames.length === 0) {
+      console.log('\n请配置翻译文件:');
+      console.log('\n  如i18n/zh-cn.js');
+    } else {
+      parser.writeFile(workbook, 'i18n.xlsx');
+      console.log(path.resolve(process.cwd(), 'i18n.xlsx') + ': ');
+      console.log('     i18n.xlsx翻译文档在当前路径下已成功生成!');
+    }
   });
 }
 
