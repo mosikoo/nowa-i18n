@@ -32,7 +32,6 @@ const json = (filepath) => {
           content.en[unit[dataKeys[0]]] = unit[dataKeys[2]] || '';
       }
     });
-    console.log(content.en);
 
     return content;
   }).filter(function (item) {
@@ -57,7 +56,7 @@ const json = (filepath) => {
   Promise.all(writeData)
     .then(function(content) {
       content.forEach(function(item) {
-        console.log('The i18n files(' + chalk.red('en.js') + ') is created successfully');
+        console.log('The i18n file(' + chalk.red('en.js') + ') is created successfully');
         console.log('   in ' + chalk.red(item));
       });
     }).catch(function(err) {
