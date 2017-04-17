@@ -79,7 +79,7 @@ utils.work = workDir;
  * @retrun {object} 如
  * {!ref: 'A1:C2', A1: {v: 1}, B1: {v: 2}, C1: {v: 3}, A2: {v: 1}, B2: {v: 2}, C2: {v: 3}}
  */
-utils.formatWb = (headers, json, i18nPath) => {
+utils.formatWb = (headers, json, enJson, i18nPath) => {
   var index = 2;
   const fileHeader = {
     A1: {
@@ -106,7 +106,7 @@ utils.formatWb = (headers, json, i18nPath) => {
         v: json[cur],
       },
       [String.fromCharCode(67) + index]: {
-        v: '',
+        v: enJson[cur] || '',
       },
     };
     index += 1;
