@@ -14,10 +14,8 @@ utils.isExcel = (filepath) => {
 }
 
 utils.processData = (json) => {
-  // need to optimize
-  var str = JSON.stringify(json).replace(/,/g, ',\n  ')
-    .replace(/:/g, ': ').replace(/[{}]/g, '');
-  str = 'module.exports = {\n  ' + str + '\n};\n';
+  var str = JSON.stringify(json, null, 2).replace(/"/g, '\'');
+  str = 'module.exports = ' + str + ';\n';
   return str;
 }
 
