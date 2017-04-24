@@ -48,3 +48,4 @@ nowa i18n json i18n.xlsx
 ##### CHANGE_LOG
 - 1.0.1 兼容window
 - 1.0.3 同时存在`zh-cn.js`与`en.js`的情况下，生成的excel文档会带有`en.js`中的`value`（key值依旧以`zh-cn.js`为准）
+- 1.0.4 生成`en.js`中双引改为单引号
