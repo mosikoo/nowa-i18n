@@ -1,6 +1,7 @@
 # nowa-i18n
 
 [![NPM version](https://img.shields.io/npm/v/nowa-i18n.svg?style=flat)](https://npmjs.org/package/nowa-i18n)
+[![Build Status](https://travis-ci.org/mosikoo/nowa-i18n.svg?branch=master)](https://travis-ci.org/mosikoo/nowa-i18n)
 
 根据zh-cn.js自动生成翻译excel文档及生成en.js
 
