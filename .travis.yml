@@ -1,0 +1,4 @@
+language: node
+sudo: false
+node_js:
+  - "6"
