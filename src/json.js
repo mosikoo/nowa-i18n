@@ -29,7 +29,8 @@ const json = (filepath) => {
     };
     item.forEach(function(unit, index) {
       if (index !== 0) {
-          content.en[unit[dataKeys[0]]] = unit[dataKeys[2]] || '';
+        const str = unit[dataKeys[2]] || '';
+        content.en[unit[dataKeys[0]]] = str.replace(/"/g, '&quot;').replace(/'/g, '&apos;');
       }
     });
 
